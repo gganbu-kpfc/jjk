@@ -4,16 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KPFC 한국정책자금지원센터 | 이종현 대표</title>
-<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --primary: #1a56db; /* 메인 파란색 */
-    --navy: #1e3a8a;    /* 강조 네이비 */
-    --gold: #d4af37;    /* 포인트 골드 */
-    --red: #e11d48;     /* 주의/강조 빨간색 */
-    --dark: #111827;    /* 텍스트 블랙 */
-    --gray: #6b7280;    /* 일반 텍스트 회색 */
-    --bg-light: #f9fafb; /* 연한 회색 배경 */
+    --main-blue: #1a56db;
+    --navy: #1e3a8a;
+    --gold: #d4af37;
+    --red: #d32f2f;
+    --black: #111827;
+    --gray-bg: #f9fafb;
     --white: #ffffff;
   }
 
@@ -21,24 +20,16 @@
   body { 
     font-family: 'Pretendard', sans-serif; 
     background-color: var(--white); 
-    color: var(--dark); 
-    line-height: 1.7; 
+    color: var(--black); 
+    line-height: 1.6; 
     word-break: keep-all; 
-    overflow-x: hidden;
   }
 
-  /* 애니메이션 설정 */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-  }
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  /* 애니메이션 */
+  .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-  /* 헤더/히어로 섹션 */
+  /* 상단 히어로 */
   .hero {
     padding: 100px 20px 80px;
     text-align: center;
@@ -46,245 +37,189 @@
   }
   .hero-badge {
     display: inline-block;
-    padding: 6px 16px;
-    background: var(--white);
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  }
-  .hero h1 {
-    font-size: clamp(28px, 5vw, 42px);
-    font-weight: 800;
-    line-height: 1.3;
-    margin-bottom: 24px;
-    color: var(--dark);
-  }
-  .hero h1 span { color: var(--primary); }
-  .hero p { font-size: 18px; color: var(--gray); margin-bottom: 40px; }
-
-  /* 메인 버튼 */
-  .cta-btn {
-    display: inline-flex;
-    align-items: center;
-    background: var(--primary);
+    padding: 8px 20px;
+    background: var(--main-blue);
     color: var(--white);
-    padding: 18px 40px;
-    border-radius: 12px;
-    font-size: 18px;
+    border-radius: 50px;
+    font-size: 15px;
     font-weight: 700;
+    margin-bottom: 24px;
+  }
+  .hero h1 { font-size: 32px; font-weight: 800; line-height: 1.4; margin-bottom: 20px; }
+  .hero h1 span { color: var(--main-blue); }
+  .hero p { font-size: 18px; color: #4b5563; margin-bottom: 40px; }
+
+  /* 전화기능 버튼 */
+  .cta-button {
+    display: inline-block;
+    background: var(--main-blue);
+    color: var(--white);
+    padding: 20px 40px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 800;
     text-decoration: none;
     box-shadow: 0 10px 25px rgba(26, 86, 219, 0.3);
-    transition: all 0.3s;
   }
-  .cta-btn:hover { transform: translateY(-3px); background: var(--navy); }
 
   /* 섹션 공통 */
-  .section { padding: 80px 20px; }
-  .section-title {
-    font-size: 28px;
-    font-weight: 800;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-  .section-title span { color: var(--primary); font-size: 14px; display: block; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+  .section { padding: 80px 20px; max-width: 800px; margin: 0 auto; }
+  .section-title { font-size: 28px; font-weight: 800; margin-bottom: 40px; text-align: center; }
+  .section-title span { color: var(--main-blue); display: block; font-size: 16px; margin-bottom: 10px; }
 
-  /* 강조 블루 섹션 (이미지 참고) */
-  .blue-bg-section {
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 80px 20px;
-  }
-  .white-box {
+  /* 강조 카드 스타일 */
+  .white-card {
     background: var(--white);
+    border: 1px solid #e5e7eb;
     border-radius: 20px;
-    padding: 40px 30px;
-    color: var(--dark);
+    padding: 35px 30px;
     margin-bottom: 30px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    border-left: 6px solid var(--gold);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border-left: 6px solid var(--main-blue);
   }
-  .white-box h3 { font-size: 22px; color: var(--navy); margin-bottom: 15px; }
-  .white-box p { font-size: 16px; color: var(--gray); }
+  .white-card h3 { font-size: 22px; margin-bottom: 15px; color: var(--navy); }
+  .white-card p { font-size: 16px; color: var(--black); font-weight: 500; }
 
-  /* 비교 테이블 */
-  .table-container { overflow-x: auto; margin-top: 30px; }
-  table { width: 100%; border-collapse: collapse; min-width: 500px; background: var(--white); border-radius: 15px; overflow: hidden; }
-  th, td { padding: 20px 15px; text-align: center; border-bottom: 1px solid #eee; }
-  th { background: #f8fafc; color: var(--navy); font-weight: 700; }
-  .highlight-cell { background: #f0f7ff; font-weight: 700; color: var(--primary); }
+  /* 파란색 강조 섹션 */
+  .blue-section { background-color: var(--main-blue); color: var(--white); padding: 80px 20px; }
+  .blue-section .section-title { color: var(--white); }
+  .blue-section .white-card { border-left: 6px solid var(--gold); }
 
-  /* 심사 프로세스 박스 */
-  .step-container { display: grid; gap: 20px; }
-  .step-item {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    padding: 25px;
-    border-radius: 15px;
-  }
-  .step-num { font-size: 14px; color: var(--primary); font-weight: 800; display: block; margin-bottom: 10px; }
-  .step-item h4 { font-size: 18px; margin-bottom: 10px; color: var(--dark); }
+  /* 심사 프로세스 설명 */
+  .process-box { background: var(--gray-bg); padding: 30px; border-radius: 15px; margin-bottom: 20px; border: 1px solid #d1d5db; }
+  .process-title { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+  .process-tag { background: var(--navy); color: var(--white); padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 700; }
 
-  /* 가격 카드 */
+  /* 가격/계약 안내 */
+  .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
   .price-card {
-    border: 2px solid var(--primary);
-    border-radius: 24px;
-    padding: 40px 30px;
-    background: var(--white);
-    position: relative;
+    border: 2px solid var(--main-blue);
+    padding: 30px 20px;
+    border-radius: 20px;
     text-align: center;
   }
-  .price-badge {
-    position: absolute;
-    top: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--red);
-    color: var(--white);
-    padding: 6px 20px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 700;
-  }
-  .price-main { font-size: 36px; font-weight: 800; margin: 20px 0; color: var(--primary); }
-  .price-sub { color: var(--gray); font-size: 15px; margin-bottom: 20px; }
+  .price-amount { font-size: 32px; font-weight: 800; color: var(--main-blue); margin-bottom: 10px; }
+  .price-monthly { font-size: 15px; color: var(--red); font-weight: 700; }
 
-  /* 인물 정보 섹션 */
-  .naver-verify {
-    background: #03c75a;
-    color: white;
-    padding: 20px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-decoration: none;
-    margin-top: 40px;
+  /* 하단 링크 */
+  .links { display: flex; flex-direction: column; gap: 15px; margin-top: 40px; }
+  .link-item { 
+    padding: 20px; border-radius: 12px; text-decoration: none; font-weight: 700; text-align: center; font-size: 18px; 
   }
+  .link-naver { background: #03c75a; color: white; }
+  .link-home { background: var(--navy); color: white; }
 
-  /* 푸터 */
   .footer { background: #111827; color: #9ca3af; padding: 60px 20px; text-align: center; font-size: 14px; }
-  .footer b { color: var(--white); }
 
-  @media (max-width: 768px) {
-    .hero h1 { font-size: 32px; }
-    .white-box { padding: 30px 20px; }
+  @media (max-width: 600px) {
+    .price-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 26px; }
   }
 </style>
 </head>
 <body>
 
   <section class="hero">
-    <div class="hero-badge fade-in">🏆 국내 최초 "나라똔" 공식 파트너</div>
+    <div class="hero-badge fade-in">🏆 국내 최초 정책자금 플랫폼 "나라똔" 공식 파트너</div>
     <h1 class="fade-in">사장님, 정부지원금<br><span>'진짜'</span> 받게 해드립니다</h1>
-    <p class="fade-in">복잡한 정책자금, 나라똔 인증컨설턴트가 해결하겠습니다.<br>사장님은 사업에만 집중하세요.</p>
-    <a href="tel:15889097" class="cta-btn fade-in">📞 지금 바로 무료 상담받기</a>
+    <p class="fade-in">세금 꼬박꼬박 잘 내고 계신다면,<br>국가가 주는 혜택도 당연히 챙기셔야죠.</p>
+    <a href="tel:1588-9097" class="cta-button fade-in">📞 지금 바로 무료상담받기</a>
   </section>
 
-  <section class="section container">
+  <section class="section">
     <div class="section-title fade-in">
-      <span>Business Strategy</span>
-      여윳돈이 있어도 정책자금을<br>받아야 하는 이유
+      <span>경영 전략</span>
+      "지금 당장 돈 필요 없는데?"<br>하시는 사장님께
     </div>
     
-    <div class="white-box fade-in" style="border-left-color: var(--primary);">
-      <h3>💰 이자보다 수익이 훨씬 높습니다</h3>
-      <p>1,000만 원당 월 이자는 <b>약 3만 원대.</b> 내 돈을 묶어두는 것은 '지출'이지만, 저리 자금을 활용해 매출을 올리는 것은 <b>'성공하는 투자'</b>입니다.</p>
+    <p class="fade-in" style="text-align: center; margin-bottom: 40px; font-weight: 600;">
+      사장님, 지금 여윳돈이 있다고 안 받으시는 건<br>길에 떨어진 금덩어리를 그냥 지나치는 것과 같습니다.
+    </p>
+
+    <div class="white-card fade-in">
+      <h3>💰 이자보다 수익이 훨씬 큽니다</h3>
+      <p>1,000만 원 빌려도 한 달 이자는 <b>딱 3만 원 꼴</b>입니다. 내 생돈 쓰는 건 '지출'이지만, 나라 돈 빌려 매출 올리는 건 <b>'성공하는 투자'</b>입니다.</p>
     </div>
 
-    <div class="white-box fade-in" style="border-left-color: var(--gold);">
-      <h3>🛡️ 중도상환수수료가 전혀 없습니다</h3>
-      <p>일반 대출과 달리 일찍 갚아도 벌금이 없습니다. 쓰다가 필요 없으면 언제든 반납하세요. 사장님 손해는 0원입니다.</p>
+    <div class="white-card fade-in">
+      <h3>🛡️ 중도상환수수료가 없어 언제든 갚으세요</h3>
+      <p>일반 대출과 달리 일찍 갚아도 수수료를 물리지 않습니다. 쓰다가 필요 없으면 내일 당장 갚아도 사장님 손해가 전혀 없습니다.</p>
     </div>
 
-    <div class="white-box fade-in" style="border-left-color: var(--navy);">
-      <h3>☔ 한도가 있을 때 미리 확보하세요</h3>
-      <p>돈이 정말 급해서 은행에 가면 "이미 한도가 꽉 찼다"는 답이 돌아옵니다. 사장님 신용이 가장 좋을 때 <b>'경영 예비비'</b>를 미리 챙기셔야 합니다.</p>
+    <div class="white-card fade-in">
+      <h3>☔ 한도가 있을 때 '예비비'를 미리 확보하세요</h3>
+      <p>나중에 진짜 돈이 필요해서 은행에 가면 "이미 한도가 꽉 찼다"며 거절당합니다. 사업이 잘될 때 미리 받아두는 자금이 가장 든든한 <b>'경영 예비비'</b>가 됩니다.</p>
     </div>
   </section>
 
-  <section class="blue-bg-section">
-    <div class="container">
-      <div class="section-title fade-in" style="color: white;">
-        <span style="color: rgba(255,255,255,0.7);">Step by Step</span>
-        왜 '두 번'이나 심사할까요?
+  <section class="blue-section">
+    <div class="section container">
+      <div class="section-title fade-in">
+        <span style="color: rgba(255,255,255,0.7);">정밀 심사 시스템</span>
+        저희는 심사를 2차례 진행합니다
       </div>
-      <p class="fade-in" style="text-align: center; margin-bottom: 40px; opacity: 0.9;">
-        정책자금은 한 번 탈락하면 1년 동안 기회가 사라집니다.<br>
-        그래서 저희는 '무조건 승인 나는 업체'만 선별합니다.
+      
+      <p class="fade-in" style="text-align: center; margin-bottom: 40px; font-weight: 600;">
+        대표님과 담당자를 위해 저희는 심사를 2번 합니다.<br>
+        왜 귀찮게 두 번이나 할까요? <b>"사장님의 소중한 기회를 날리지 않기 위해서"</b>입니다.
       </p>
 
-      <div class="white-box fade-in">
-        <span style="color: var(--primary); font-weight: 800;">REASON 01. 대표님 입장</span>
-        <h3 style="margin-top: 10px;">단 한 번의 기회를 승인으로</h3>
-        <p>1차 유선 심사에서 10여 가지 항목을 체크해 '안 될 사유'부터 싹 치웁니다. <b>(신청 업체의 50%가 여기서 탈락합니다.)</b></p>
+      <div class="white-card fade-in">
+        <div class="process-title"><span class="process-tag">1차</span> <strong>유선 심사 (전화 무료 진단)</strong></div>
+        <p>업종, 매출, 신용점수 등 10여 가지 항목을 체크하여 시뮬레이션을 돌려봅니다. 여기서 통과되지 않으면 아예 신청을 권하지 않습니다. <b>(약 50%가 여기서 탈락합니다.)</b></p>
       </div>
 
-      <div class="white-box fade-in">
-        <span style="color: var(--primary); font-weight: 800;">REASON 02. 당사 담당자 입장</span>
-        <h3 style="margin-top: 10px;">저희도 안 나오면 손해입니다</h3>
-        <p>저희는 자금 미 조달 시 <b>100% 환불</b>해 드립니다. 그렇기에 승인 가능성이 없는 업체는 아예 시작도 하지 않습니다. 오직 '되는 업체'에만 집중합니다.</p>
+      <div class="white-card fade-in">
+        <div class="process-title"><span class="process-tag">2차</span> <strong>전략 심사 (심사관 현장 실사)</strong></div>
+        <p>담당 심사관이 직접 현장에 나가 서류를 대조하고, 실제 기관 심사 시 탈락할 만한 요소를 미리 방지합니다. 저희는 <b>자금 미 조달 시 100% 환불</b>해 드리기에 '안 될 업체'는 도와드리지 않습니다.</p>
       </div>
-      <p class="fade-in" style="font-size: 13px; text-align: center; color: rgba(255,255,255,0.7);">※ 현장에서 1차 내용과 다르거나 단순 변심 시 자문료 명목의 출장비가 발생합니다.</p>
+      <p class="fade-in" style="text-align: center; font-size: 14px; opacity: 0.8;">※ 현장에서 1차 내용과 다르거나 단순 변심 시 자문료 명목의 출장비가 발생합니다.</p>
     </div>
   </section>
 
-  <section class="section container">
+  <section class="section">
     <div class="section-title fade-in">
-      <span>Price Plan</span>
-      우리 회사 '자금 전담 팀장'
+      <span>서비스 안내</span>
+      우리 회사 '자금 전담 파트너'
     </div>
 
-    <div class="price-card fade-in">
-      <div class="price-badge">나라똔 MOU 특별 혜택</div>
-      <div class="price-sub">연 매출 5억 미만 기준 계약금</div>
-      <div class="price-main">110만원</div>
-      <p style="font-weight: 700; color: var(--red); margin-bottom: 20px;">한 달 약 9만원대 <span style="font-weight: 400; color: var(--gray);">(12개월 할부 기준)</span></p>
-      
-      <div style="text-align: left; background: #f8fafc; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
-        <p style="margin-bottom: 10px;">✅ <b>성공보수:</b> 원래 7% → <span style="color: var(--primary);"><b>국내 최저 3%</b></span></p>
-        <p>✅ <b>책임 약속:</b> 자금 미 조달 시 <b>100% 환불</b></p>
+    <div class="price-grid">
+      <div class="price-card fade-in">
+        <p style="margin-bottom: 10px; font-weight: 700;">연 매출 5억 미만</p>
+        <div class="price-amount">110만원</div>
+        <div class="price-monthly">한달 약 9만원대 (110만 기준)</div>
       </div>
-      
-      <p style="color: var(--gray); font-size: 14px;">💳 전 금액 카드 결제 및 무이자 할부 가능</p>
+      <div class="price-card fade-in">
+        <p style="margin-bottom: 10px; font-weight: 700;">연 매출 5억 이상</p>
+        <div class="price-amount">220만원</div>
+        <div class="price-monthly">자금 전문가 전담 배치</div>
+      </div>
     </div>
-  </section>
 
-  <section class="section container" style="padding-top: 0;">
-    <a href="https://search.naver.com/search.naver?query=%ED%95%9C%EA%B5%AD%EC%A0%95%EC%B1%85%EC%9E%90%EA%B8%88%EC%A7%80%EC%9B%90%EC%84%BC%ED%84%B0+%EC%9D%B4%EC%A2%85%ED%98%84" target="_blank" class="naver-verify fade-in">
-      <div>
-        <b style="font-size: 18px;">N 네이버 인물정보 등록 심사관</b>
-        <p style="font-size: 14px; opacity: 0.9;">이종현 대표의 전문성을 직접 확인하세요</p>
-      </div>
-      <span>확인하기 ➔</span>
-    </a>
+    <div class="white-card fade-in" style="margin-top: 30px; text-align: center; border-left: none; border-top: 5px solid var(--main-blue);">
+      <p style="font-size: 20px; color: var(--red); font-weight: 800; margin-bottom: 10px;">성공보수: 원래 7% → 3% (MOU 혜택)</p>
+      <p><b>국내 최저 수수료 / 자금 미 조달 시 100% 환불</b></p>
+      <p style="margin-top: 10px; font-size: 14px; color: #6b7280;">💳 전 금액 카드 결제 및 할부 가능</p>
+    </div>
+
+    <div class="links fade-in">
+      <a href="https://search.naver.com/search.naver?query=%ED%95%9C%EA%B5%AD%EC%A0%95%EC%B1%85%EC%9E%90%EA%B8%88%EC%20%EC%A7%80%EC%9B%90%EC%84%BC%ED%84%B0%20%EC%9D%B4%EC%A2%85%ED%98%84" target="_blank" class="link-item link-naver">N 네이버 인물정보 등록 심사관 확인</a>
+      <a href="http://www.kpfc.kr" target="_blank" class="link-item link-home">KPFC 공식 홈페이지 방문하기</a>
+    </div>
   </section>
 
   <footer class="footer">
-    <div class="container">
-      <p><b>이종현 대표</b> | 한국정책자금지원센터(KPFC)</p>
-      <p style="margin: 15px 0;">특허법인 제휴를 통한 기업인증 및 특허 전략 전문</p>
-      <p style="font-size: 12px; opacity: 0.6;">본 심사관은 영업사원이 아닌 전문가입니다. 상호 예의를 지켜주시기 바랍니다.<br>자금은 타이밍입니다. 예산 소진 전 준비하십시오.</p>
-    </div>
+    <p><b>이 종 현 대표</b> | 한국정책자금지원센터(KPFC)</p>
+    <p style="margin-top: 15px;">당사 심사관은 영업사원이 아닌 업체를 평가하는 전문가입니다.<br>최선을 다해 도와드리는 만큼 상호 예의를 지켜주시기 바랍니다.</p>
+    <p style="margin-top: 20px; font-size: 12px; opacity: 0.5;">문의: 1588-9097 | Copyright 2026 KPFC. All rights reserved.</p>
   </footer>
 
   <script>
-    // 스크롤 애니메이션 스크립트
-    const observerOptions = {
-      threshold: 0.1
-    };
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, observerOptions);
-
+    }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
