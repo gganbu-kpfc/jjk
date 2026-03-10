@@ -1,0 +1,15 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+body {
+  margin: 0;
+  font-family: 'Pretendard', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tailwind CSS가 설치 안되어 있을 경우를 대비한 최소한의 설정 */
+* { box-sizing: border-box; }
+.flex { display: flex; }
+.min-h-screen { min-height: 100vh; }
+.bg-slate-50 { background-color: #f8fafc; }
+/* ... (위의 Tailwind 클래스들은 실제 개발 시 tailwind.config.js 설정을 따릅니다) */
