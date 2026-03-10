@@ -1,15 +1,50 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
+:root {
+  --primary: #1e3a8a;    /* 주신 HTML의 메인 네이비 */
+  --secondary: #3b82f6;  /* 포인트 블루 */
+  --danger: #ef4444;     /* 경고/탈락 레드 */
+  --success: #10b981;    /* 승인/합격 그린 */
+  --bg-slate: #f8fafc;
+  --white: #ffffff;
+}
+
 body {
   margin: 0;
   font-family: 'Pretendard', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-slate);
+  color: #1e293b;
 }
 
-/* Tailwind CSS가 설치 안되어 있을 경우를 대비한 최소한의 설정 */
-* { box-sizing: border-box; }
-.flex { display: flex; }
-.min-h-screen { min-height: 100vh; }
-.bg-slate-50 { background-color: #f8fafc; }
-/* ... (위의 Tailwind 클래스들은 실제 개발 시 tailwind.config.js 설정을 따릅니다) */
+/* 주신 HTML의 애니메이션 효과 그대로 가져오기 */
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.slide-in-left {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* 카드 디자인 (주신 HTML의 white-inner-card 스타일) */
+.kpfc-card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-left: 8px solid var(--primary);
+  transition: transform 0.3s ease;
+}
+
+.kpfc-card:hover {
+  transform: scale(1.02);
+}
