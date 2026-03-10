@@ -1,0 +1,77 @@
+/* KPFC Design Tokens & Global Styles */
+
+:root {
+  /* 컬러 시스템 */
+  --kpfc-primary: #1a365d;    /* 신뢰의 딥 블루 */
+  --kpfc-secondary: #2b6cb0;  /* 강조 블루 */
+  --kpfc-accent: #f59e0b;     /* 가점/경고 골드 */
+  --kpfc-danger: #e53e3e;     /* 위험/과락 레드 */
+  --kpfc-success: #38a169;    /* 승인/안전 그린 */
+  --kpfc-bg: #f7fafc;         /* 배경 그레이 */
+  --kpfc-white: #ffffff;
+  
+  /* 폰트 및 사이즈 */
+  --font-main: 'Pretendard', -apple-system, sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--kpfc-bg);
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* 스크롤바 커스텀 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 10px;
+}
+
+/* 공통 레이아웃 클래스 */
+.app-container {
+  min-height: 100vh;
+}
+
+.card {
+  background: var(--kpfc-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* 버튼 스타일 */
+.btn-primary {
+  background-color: var(--kpfc-primary);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--kpfc-secondary);
+}
+
+/* 신호등 애니메이션 */
+.signal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
