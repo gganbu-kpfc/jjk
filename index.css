@@ -1,3 +1,12 @@
+:root {
+  --navy: #0b2553;       /* 메인 (신뢰) */
+  --navy-deep: #081733;  /* 강조 (CTA 배경) */
+  --blue-soft: #eef5ff;  /* 카드 배경 */
+  --sky: #dfeafb;        /* 구분 영역 */
+  --gold: #f5b800;       /* 인증/방송 강조 */
+  --mint: #2cc5a8;       /* AI/시스템 느낌 */
+}
+
 /* 기본 세팅 */
 * {
   box-sizing: border-box;
