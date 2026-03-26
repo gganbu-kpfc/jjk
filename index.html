@@ -1,288 +1,1273 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KPFC 한국정책자금지원센터 | 이종현 대표</title>
-<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --primary: #1a56db;
-    --navy: #0f172a;
-    --gold: #f59e0b;
-    --highlight: #fef08a;
-    --danger: #e11d48;
-    --white: #ffffff;
-    --bg-light: #f8fafc;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KPFC 한국정책자금지원센터 | 정책자금 무료 1차 진단</title>
+  <meta name="description" content="KPFC 한국정책자금지원센터. 나라똔 인증 기업심사관. 정책자금 무료 1차 진단, 2차 전략 심사, 자금 미조달 시 100% 환불." />
+  <style>
+    :root {
+      --navy: #102a56;
+      --navy-deep: #0a1c39;
+      --navy-soft: #1d3e78;
+      --blue-line: #d9e5fb;
+      --text: #172033;
+      --sub: #5d6880;
+      --bg: #f5f8ff;
+      --white: #ffffff;
+      --accent: #edf3ff;
+      --shadow: 0 18px 45px rgba(16, 42, 86, 0.12);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1200px;
+    }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { 
-    font-family: 'Pretendard', sans-serif; 
-    background-color: var(--white); 
-    color: var(--navy); 
-    line-height: 1.7; 
-    word-break: keep-all; 
-    overflow-x: hidden;
-  }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
 
-  /* 상단 고정 파란 배너 */
-  .top-strip { 
-    background: var(--primary); 
-    color: white; 
-    text-align: center; 
-    padding: 12px; 
-    font-size: 15px; 
-    font-weight: 700; 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 10px; 
-  }
-  .top-logo { height: 20px; filter: brightness(0) invert(1); }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-  /* ✨ 애니메이션 효과 */
-  .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
-  .slide-in-left { opacity: 0; transform: translateX(-30px); transition: all 0.8s ease-out; }
-  .slide-in-left.visible { opacity: 1; transform: translateX(0); }
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-  /* ✨ 박스 호버 효과 */
-  .hover-scale { transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
-  .hover-scale:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important; border-color: var(--primary) !important; }
+    .section { padding: 96px 0; }
 
-  .mark { background: var(--highlight); padding: 2px 6px; border-radius: 4px; font-weight: 800; color: #000; }
-  .red-text { color: var(--danger); font-weight: 800; }
-  .blue-text { color: var(--primary); font-weight: 800; }
+    .topbar {
+      background: var(--navy-deep);
+      color: rgba(255,255,255,0.88);
+      font-size: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
 
-  /* 헤더/히어로 */
-  .hero {
-    padding: 60px 20px 80px;
-    text-align: center;
-    background: linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .main-logo { height: 60px; margin-bottom: 30px; display: block; }
-  .hero-badge {
-    display: inline-block;
-    padding: 10px 24px;
-    background: var(--navy);
-    color: var(--white);
-    border-radius: 50px;
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
-  }
-  .hero h1 { font-size: 38px; font-weight: 800; line-height: 1.4; margin-bottom: 24px; }
-  .hero h1 span { color: var(--primary); border-bottom: 5px solid var(--highlight); display: inline-block; }
-  
-  .main-cta {
-    display: inline-block;
-    background: var(--primary);
-    color: var(--white);
-    padding: 22px 60px;
-    border-radius: 16px;
-    font-size: 20px;
-    font-weight: 800;
-    text-decoration: none;
-    box-shadow: 0 10px 25px rgba(26, 86, 219, 0.3);
-  }
+    .topbar-inner {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+      flex-wrap: wrap;
+    }
 
-  /* 섹션 공통 */
-  .section { padding: 80px 20px; max-width: 850px; margin: 0 auto; }
-  .section-title { font-size: 32px; font-weight: 800; margin-bottom: 40px; text-align: center; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(16,42,86,0.08);
+    }
 
-  /* 카드 스타일 */
-  .info-card {
-    background: var(--white);
-    border: 1px solid #e2e8f0;
-    border-radius: 24px;
-    padding: 40px 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
-  }
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-  /* 블루 섹션 */
-  .accent-section { background-color: var(--primary); color: var(--white); padding: 80px 20px; }
-  .white-inner-card {
-    background: var(--white);
-    border-radius: 24px;
-    padding: 35px;
-    color: var(--navy);
-    margin-bottom: 25px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-  }
-  .step-label {
-    display: inline-block;
-    background: var(--navy);
-    color: var(--white);
-    padding: 6px 16px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 800;
-    margin-bottom: 15px;
-  }
-  .tag { display: inline-block; background: var(--navy); color: white; padding: 5px 15px; border-radius: 8px; font-weight: 800; margin-bottom: 15px; font-size: 14px; }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
 
-  /* 💎 가격 카드 디자인 */
-  .price-container { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px; }
-  .price-card { 
-    background: white; border-radius: 28px; padding: 45px 30px; text-align: center; 
-    border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-  }
-  .price-card.featured { border: 3px solid var(--primary); }
-  .price-val { font-size: 44px; font-weight: 800; color: var(--primary); margin-bottom: 5px; }
-  .price-sub { font-size: 16px; font-weight: 700; color: var(--danger); background: #fff1f2; display: inline-block; padding: 4px 12px; border-radius: 50px; margin-bottom: 20px; }
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      box-shadow: 0 10px 25px rgba(16,42,86,0.18);
+      flex-shrink: 0;
+    }
 
-  /* VS 비교 섹션 */
-  .vs-section { background: #fdf2f2; border-radius: 40px; padding: 60px 20px; margin: 40px 0; }
-  .vs-grid { display: flex; flex-direction: column; gap: 15px; }
-  .vs-row { display: grid; grid-template-columns: 1fr 0.3fr 1fr; align-items: center; gap: 10px; }
-  .vs-label { text-align: center; font-size: 13px; font-weight: 800; color: #64748b; }
-  .vs-card-kpfc { background: var(--primary); color: white; padding: 22px; border-radius: 18px; text-align: center; font-weight: 800; box-shadow: 0 8px 15px rgba(26, 86, 219, 0.2); }
-  .vs-card-low { background: white; color: #991b1b; padding: 22px; border-radius: 18px; text-align: center; font-weight: 700; border: 1px solid #fee2e2; opacity: 0.8; }
+    .brand-copy { min-width: 0; }
+    .brand-kicker {
+      display: block;
+      font-size: 12px;
+      color: var(--navy-soft);
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .brand-name {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--navy-deep);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-  .footer { background: #0f172a; color: #94a3b8; padding: 60px 20px; text-align: center; }
-  .footer-logo { height: 30px; margin-bottom: 20px; filter: brightness(0) invert(1); opacity: 0.6; }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
 
-  @media (max-width: 768px) {
-    .price-container { grid-template-columns: 1fr; }
-    .vs-row { grid-template-columns: 1fr; gap: 5px; }
-    .vs-label { margin-top: 15px; }
-    .hero h1 { font-size: 30px; }
-  }
-</style>
+    .tel-chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--navy);
+      font-weight: 800;
+      border: 1px solid var(--blue-line);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 0;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+      color: var(--white);
+      box-shadow: 0 14px 34px rgba(16,42,86,0.18);
+    }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border: 1px solid var(--blue-line);
+    }
+    .btn-block { width: 100%; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(29,62,120,0.10) 0%, rgba(29,62,120,0) 36%),
+        radial-gradient(circle at 88% 18%, rgba(16,42,86,0.12) 0%, rgba(16,42,86,0) 32%),
+        linear-gradient(180deg, #f9fbff 0%, #eef4ff 100%);
+      padding: 90px 0 70px;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 520px;
+      height: 520px;
+      right: -120px;
+      top: -160px;
+      background: radial-gradient(circle, rgba(16,42,86,0.09), rgba(16,42,86,0));
+    }
+
+    .hero::after {
+      width: 380px;
+      height: 380px;
+      left: -120px;
+      bottom: -180px;
+      background: radial-gradient(circle, rgba(29,62,120,0.08), rgba(29,62,120,0));
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-form-wrap {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(16,42,86,0.08);
+      box-shadow: var(--shadow);
+      border-radius: 34px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-copy {
+      padding: 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: #eef4ff;
+      border: 1px solid #d8e5ff;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.14;
+      letter-spacing: -0.05em;
+      color: var(--navy-deep);
+    }
+
+    .hero h1 strong { color: var(--navy); }
+
+    .hero-lead {
+      margin: 20px 0 0;
+      font-size: 19px;
+      color: var(--sub);
+      max-width: 760px;
+      word-break: keep-all;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-point {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--white);
+      border: 1px solid #e6eefc;
+      font-weight: 700;
+      color: var(--text);
+      box-shadow: 0 8px 18px rgba(16,42,86,0.05);
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--sub);
+      font-weight: 600;
+    }
+
+    .hero-form-wrap {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-card-title {
+      font-size: 29px;
+      line-height: 1.25;
+      letter-spacing: -0.04em;
+      color: var(--navy-deep);
+      margin: 0 0 10px;
+      font-weight: 900;
+    }
+
+    .form-card-desc {
+      margin: 0 0 20px;
+      color: var(--sub);
+      font-size: 15px;
+    }
+
+    .mini-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .mini-badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      border: 1px solid var(--blue-line);
+    }
+
+    .lead-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--navy-deep);
+      margin-bottom: 8px;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      border: 1px solid #d9e5fb;
+      background: #fbfdff;
+      color: var(--text);
+      border-radius: 14px;
+      padding: 15px 16px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--navy-soft);
+      box-shadow: 0 0 0 4px rgba(29,62,120,0.08);
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .consent {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      color: var(--sub);
+      line-height: 1.5;
+    }
+
+    .consent input { margin-top: 3px; }
+
+    .form-foot {
+      font-size: 13px;
+      color: var(--sub);
+      margin-top: 6px;
+    }
+
+    .trust-strip {
+      padding: 26px 0;
+      border-top: 1px solid #e6eefc;
+      border-bottom: 1px solid #e6eefc;
+      background: #ffffff;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .trust-item {
+      background: #f9fbff;
+      border: 1px solid #e3ecff;
+      border-radius: 20px;
+      padding: 20px 18px;
+      text-align: center;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 15px;
+      color: var(--navy-deep);
+      margin-bottom: 6px;
+    }
+
+    .trust-item span {
+      display: block;
+      font-size: 13px;
+      color: var(--sub);
+      word-break: keep-all;
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 40px;
+    }
+
+    .section-head .kicker {
+      display: inline-block;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.18;
+      letter-spacing: -0.05em;
+      color: var(--navy-deep);
+    }
+
+    .section-head p {
+      margin: 14px 0 0;
+      color: var(--sub);
+      font-size: 18px;
+      word-break: keep-all;
+    }
+
+    .problem-grid,
+    .reason-grid,
+    .process-grid,
+    .pricing-grid,
+    .review-grid,
+    .faq-grid,
+    .contact-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .problem-grid,
+    .reason-grid,
+    .review-grid,
+    .faq-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .process-grid,
+    .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .contact-grid { grid-template-columns: 0.9fr 1.1fr; align-items: stretch; }
+
+    .card {
+      background: var(--white);
+      border: 1px solid #e6eefc;
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: 0 12px 28px rgba(16,42,86,0.06);
+    }
+
+    .card-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #edf3ff 0%, #dce9ff 100%);
+      color: var(--navy);
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.25;
+      letter-spacing: -0.04em;
+      color: var(--navy-deep);
+    }
+
+    .card p,
+    .card li {
+      color: var(--sub);
+      font-size: 16px;
+      margin: 0;
+      word-break: keep-all;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .card strong { color: var(--text); }
+
+    .highlight-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+      color: var(--white);
+      border-radius: 34px;
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(16,42,86,0.20);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .highlight-banner h2,
+    .highlight-banner p,
+    .highlight-banner li { color: var(--white); }
+
+    .highlight-banner h2 {
+      margin: 0 0 16px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.2;
+      letter-spacing: -0.05em;
+    }
+
+    .highlight-banner p {
+      margin: 0;
+      font-size: 18px;
+      color: rgba(255,255,255,0.84);
+    }
+
+    .highlight-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .highlight-item {
+      padding: 16px 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .stats-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      padding: 30px;
+      backdrop-filter: blur(8px);
+    }
+
+    .stats-box h3 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      letter-spacing: -0.04em;
+    }
+
+    .stats-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .stats-box li {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.88);
+      font-size: 16px;
+    }
+
+    .stats-box li:last-child { border-bottom: 0; }
+    .stats-box strong { display: block; color: #ffffff; font-size: 20px; margin-bottom: 2px; }
+
+    .price-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #eff4ff;
+      color: var(--navy);
+      border: 1px solid #d8e5ff;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .price-main {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      margin: 16px 0 8px;
+      flex-wrap: wrap;
+    }
+
+    .price-main strong {
+      font-size: 46px;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      color: var(--navy-deep);
+    }
+
+    .price-main span {
+      font-size: 16px;
+      color: var(--sub);
+      font-weight: 700;
+      padding-bottom: 5px;
+    }
+
+    .strike {
+      text-decoration: line-through;
+      color: #8a94a9;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .review-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    }
+
+    .review-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .review-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--navy-soft));
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .review-head strong {
+      display: block;
+      font-size: 16px;
+      color: var(--navy-deep);
+    }
+
+    .review-head span {
+      display: block;
+      font-size: 13px;
+      color: var(--sub);
+    }
+
+    .faq-item h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .contact-card,
+    .contact-form-card {
+      background: var(--white);
+      border: 1px solid #e6eefc;
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 14px 34px rgba(16,42,86,0.08);
+    }
+
+    .contact-card {
+      background: linear-gradient(180deg, #112c58 0%, #0a1c39 100%);
+      color: var(--white);
+    }
+
+    .contact-card h2,
+    .contact-card p,
+    .contact-card li,
+    .contact-card strong { color: var(--white); }
+
+    .contact-card p { color: rgba(255,255,255,0.82); }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 26px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-list li {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .contact-list strong {
+      display: block;
+      font-size: 14px;
+      opacity: 0.82;
+      margin-bottom: 4px;
+    }
+
+    .footer {
+      padding: 34px 0 52px;
+      background: #08172f;
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .floating-cta {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 60;
+      box-shadow: 0 18px 35px rgba(16,42,86,0.22);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .highlight-banner,
+      .contact-grid,
+      .process-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .problem-grid,
+      .reason-grid,
+      .review-grid,
+      .faq-grid,
+      .trust-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section { padding: 76px 0; }
+      .hero { padding: 72px 0 56px; }
+      .hero-copy,
+      .hero-form-wrap,
+      .card,
+      .contact-card,
+      .contact-form-card,
+      .highlight-banner,
+      .stats-box { padding: 24px; }
+
+      .header-inner {
+        min-height: 72px;
+        align-items: flex-start;
+        padding: 12px 0;
+      }
+
+      .header-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero-points,
+      .problem-grid,
+      .reason-grid,
+      .review-grid,
+      .faq-grid,
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .floating-cta {
+        right: 14px;
+        left: 14px;
+        bottom: 14px;
+      }
+      .floating-cta .btn { width: 100%; }
+    }
+  </style>
 </head>
 <body>
-
-  <div class="top-strip">
-    <img src="https://www.kpfc.kr/images/kpfc-logo.png" alt="KPFC" class="top-logo">
-    한국정책자금지원센터 1588-9097 "나라똔" 인증 기업심사관
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>KPFC 한국정책자금지원센터</span>
+      <span>•</span>
+      <span>나라똔 인증 기업심사관</span>
+      <span>•</span>
+      <span>무료 1차 진단 진행</span>
+    </div>
   </div>
 
-  <section class="hero">
-    <img src="https://www.kpfc.kr/images/kpfc-logo.png" alt="KPFC 로고" class="main-logo fade-in">
-    <div class="hero-badge fade-in">🏆 나라똔 인증 공식 컨설턴트</div>
-    <h1 class="slide-in-left">사장님, 정부지원금<br><span>'진짜'</span> 받게 해드립니다</h1>
-    <p class="fade-in" style="font-weight: 600; font-size: 19px; color: #475569;">"세금 꼬박꼬박 내셨다면, 국가 혜택은 권리입니다."</p>
-    <a href="tel:1588-9097" class="main-cta hover-scale fade-in">📞 지금 바로 무료상담받기</a>
-  </section>
-
-  <section class="section">
-    <h2 class="section-title slide-in-left">"지금 당장 돈 필요 없는데?"<br>하시는 사장님께</h2>
-    <div class="info-card hover-scale fade-in" style="border-top: 8px solid var(--primary);">
-      <h3>🔵 정책자금은 여유가 있어도 받아야 합니다</h3>
-      <p style="font-size: 18px; font-weight: 500;">지금 여윳돈이 있다고 안 받는 건 수익 기회를 그냥 지나치는 것과 같습니다. <span class="mark">1,000만 원 빌려도 한 달 이자는 딱 3만 원 꼴</span>입니다. 내 돈 쓰는 건 지출이지만, 나라 돈 활용은 <span class="blue-text">성공하는 투자</span>입니다.</p>
-    </div>
-    
-    <div class="info-card hover-scale fade-in" style="border-top: 8px solid var(--danger); background: #fff1f2;">
-      <h3 class="red-text">🚨 "지금 당장 내일 돈이 필요해요" 하시는 분들께</h3>
-      <p style="font-size: 18px; font-weight: 500; color: #444;">정책자금은 오늘 신청해서 내일 나오는 '급전 대출'이 아닙니다. 최소 1개월에서 3개월의 심사 기간이 필요합니다. 정말 돈이 급해지기 전에, <span class="red-text">미리 비상금을 확보한다는 마음</span>으로 준비하셔야 합니다.</p>
-    </div>
-  </section>
-
-  <section class="section" style="background: #f8fafc; border-radius: 40px; margin-bottom: 40px;">
-    <h2 class="section-title fade-in">저희는 왜 귀찮게<br>심사를 2번이나 할까요?</h2>
-    <p style="text-align: center; font-size: 18px; font-weight: 600; color: #64748b; margin-bottom: 45px;">"대표님과 저희를 위해, 소중한 기회를 절대로 날리지 않겠습니다."</p>
-    
-    <div class="info-card hover-scale fade-in">
-      <span class="tag">대표님을 위해</span>
-      <h3 style="font-size: 22px; margin-bottom: 10px;">🛡️ 사장님의 '1년'이라는 시간을 지켜드립니다</h3>
-      <p style="font-size: 17px; font-weight: 500; color: #475569;">정책자금 탈락 시 1년 재신청 불가! 저희가 먼저 깐깐하게 걸러내어 사장님의 소중한 기회를 보호합니다.</p>
-    </div>
-
-    <div class="info-card hover-scale fade-in" style="border-left-color: var(--primary);">
-      <span class="tag">담당자를 위해</span>
-      <h3 style="font-size: 22px; margin-bottom: 10px;">📉 저희도 '안 될 업체'에 시간 낭비하지 않습니다</h3>
-      <p style="font-size: 17px; font-weight: 500; color: #475569;">저희는 자금 미조달 시 100% 환불을 약속드립니다. 승인 확률이 확실한 업체에만 화력을 집중하는 이유입니다.</p>
-    </div>
-  </section>
-
-  <section class="accent-section">
-    <div class="section" style="padding: 0;">
-      <p style="text-align: center; font-size: 16px; font-weight: 700; margin-bottom: 5px; opacity: 0.8; color: white;">[ 시스템 설명 ]</p>
-      <h2 class="slide-in-left" style="color: white; font-size: 34px; text-align: center; margin-bottom: 40px;">저희는 심사를 두 번 봅니다.</h2>
-      
-      <div class="white-inner-card hover-scale fade-in">
-        <span class="step-label">1차 유선 심사</span> <strong>(전화 무료 진단)</strong>
-        <p style="margin-top:15px; font-weight: 600; font-size: 19px;">
-          업종, 매출 등 <span class="blue-text">10여 가지 항목</span>을 꼼꼼히 체크하여 시뮬레이션을 돌려봅니다. 여기서 통과되지 않으면 아예 신청을 <span class="red-text">권하지 않습니다.</span> (약 50%가 여기서 탈락합니다.)
-        </p>
-      </div>
-
-      <div class="white-inner-card hover-scale fade-in" style="border-left-color: var(--navy);">
-        <span class="step-label" style="background: var(--navy);">2차 전략 심사</span> <strong>(심사관 현장 실사)</strong>
-        <p style="margin-top:15px; font-weight: 600; font-size: 19px;">
-          담당 심사관이 직접 현장에 나가 서류를 대조하고, 기관 심사 때 꼬투리 잡힐 요소를 방어합니다. <span class="mark">자금 미 조달 시 100% 환불</span>해 드리기에 '되는 업체'에만 집중합니다.
-        </p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <div class="brand-mark">KP</div>
+        <div class="brand-copy">
+          <span class="brand-kicker">Policy Fund Consulting</span>
+          <div class="brand-name">KPFC 한국정책자금지원센터</div>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a class="tel-chip" href="tel:1588-9097">📞 1588-9097</a>
+        <a class="btn btn-primary" href="#leadForm">무료 1차 진단 받기</a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="section">
-    <h2 class="section-title slide-in-left">딱 1년만 저 믿고 맡겨보세요</h2>
-    <div class="price-container">
-      <div class="price-card hover-scale fade-in">
-        <span style="font-size: 16px; font-weight: 700; color: #64748b; margin-bottom: 15px; display: block;">연 매출 5억 미만</span>
-        <div class="price-val">110<span>만원</span></div>
-        <div class="price-sub">한 달 약 9만원대</div>
-        <p style="color: #64748b; font-size: 15px; font-weight: 600;">소상공인 맞춤형 자금 조달</p>
-      </div>
-      <div class="price-card featured hover-scale fade-in">
-        <span style="font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 15px; display: block;">연 매출 5억 이상</span>
-        <div class="price-val">220<span>만원</span></div>
-        <div class="price-sub" style="background: #e0f2fe; color: var(--primary);">자금 전문가 전담 배치</div>
-        <p style="color: #64748b; font-size: 15px; font-weight: 600;">기업 분석 및 대형 자금 설계</p>
-      </div>
-    </div>
-    <div class="white-inner-card hover-scale fade-in" style="text-align: center; border-top: 8px solid var(--danger); background: #fdf2f2;">
-      <p style="font-size: 24px; color: var(--danger); font-weight: 800; margin-bottom: 12px;">💡 성공보수: 원래 7% → 3% (MOU 특별가)</p>
-      <p style="font-weight: 700; font-size: 18px;">국내 최저 수수료 / 자금 미 조달 시 100% 환불 보장</p>
-    </div>
-  </section>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">🏆 나라똔 인증 공식 컨설턴트 · 정책자금 무료 1차 진단</div>
+          <h1>
+            사장님,<br />
+            정부지원금을 <strong>설명하는 곳</strong>이 아니라<br />
+            <strong>진짜 받게 만드는 곳</strong>을 찾고 계셨죠?
+          </h1>
+          <p class="hero-lead">
+            정책자금은 무조건 나오는 돈이 아닙니다. 그래서 더 중요합니다.<br />
+            지금 기준으로 가능한지 먼저 보고, 되는 업체만 진행합니다.
+          </p>
 
-  <section class="section vs-section">
-    <div class="section-title slide-in-left" style="margin-bottom: 20px;">🛑 저가형 컨설팅 주의</div>
-    <p class="fade-in" style="text-align: center; font-weight: 700; color: #64748b; margin-bottom: 40px; font-size: 15px;">
-      계약금이 없거나, 30만원 내외 업체는 피하세요.
-    </p>
-    <div class="vs-grid fade-in">
-      <div class="vs-row">
-        <div style="font-weight: 800; color: var(--primary); text-align: center; font-size: 20px;">KPFC 센터</div>
-        <div style="font-weight: 800; color: #cbd5e1; text-align: center;">VS</div>
-        <div style="font-weight: 800; color: #991b1b; text-align: center; font-size: 20px;">저가형 업체</div>
+          <div class="hero-points">
+            <div class="hero-point">무조건 진행하지 않습니다</div>
+            <div class="hero-point">무료 1차 진단으로 가능 여부 판단</div>
+            <div class="hero-point">2차 현장 전략 심사 진행</div>
+            <div class="hero-point">자금 미조달 시 100% 환불</div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#leadForm">지금 무료로 가능 여부 확인하기</a>
+            <a class="btn btn-secondary" href="#why">왜 미리 받아야 하는지 보기</a>
+          </div>
+          <p class="hero-note">
+            “지금 필요 없는데요?” 하시는 분들이 나중에 가장 많이 다시 찾습니다.
+          </p>
+        </div>
+
+        <div class="hero-form-wrap" id="leadForm">
+          <div class="mini-badges">
+            <span class="mini-badge">대표자 무료 진단</span>
+            <span class="mini-badge">1차 전화 심사</span>
+            <span class="mini-badge">상담 예약 접수</span>
+          </div>
+          <h2 class="form-card-title">대표님 상황,<br />지금 기준으로 가능한지 먼저 보겠습니다</h2>
+          <p class="form-card-desc">
+            무조건 된다고 말하지 않습니다. 업종, 매출, 운영 상황을 보고 무료로 1차 판단해드립니다.
+          </p>
+
+          <!--
+            아래 action="YOUR_FORM_ENDPOINT" 부분만 교체하면 됩니다.
+            예시:
+            1) Formspree: https://formspree.io/f/xxxxxxx
+            2) Netlify Forms 사용 시 action 제거 후 data-netlify="true" 추가
+            3) 구글시트/Zapier/Make 연결용 웹훅 주소 입력 가능
+          -->
+          <form class="lead-form" action="YOUR_FORM_ENDPOINT" method="POST">
+            <div class="field">
+              <label for="name">성함 / 업체명</label>
+              <input id="name" name="name" type="text" placeholder="예: 홍길동 / OO산업" required />
+            </div>
+            <div class="field">
+              <label for="phone">연락처</label>
+              <input id="phone" name="phone" type="tel" placeholder="예: 010-1234-5678" required />
+            </div>
+            <div class="field">
+              <label for="sales">연 매출 구간</label>
+              <select id="sales" name="sales" required>
+                <option value="">선택해주세요</option>
+                <option>5억 미만</option>
+                <option>5억 이상 ~ 10억 미만</option>
+                <option>10억 이상 ~ 30억 미만</option>
+                <option>30억 이상</option>
+                <option>잘 모르겠습니다</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">간단한 상담 내용</label>
+              <textarea id="message" name="message" placeholder="예: 제조업 / 운영 4년차 / 시설자금 또는 운전자금 상담 원합니다"></textarea>
+            </div>
+            <label class="consent">
+              <input type="checkbox" required />
+              <span>개인정보 수집 및 상담 연락에 동의합니다. 접수 내용은 정책자금 1차 진단 및 상담 안내 목적으로만 사용됩니다.</span>
+            </label>
+            <button class="btn btn-primary btn-block" type="submit">무료 1차 진단 신청하기</button>
+            <div class="form-foot">안 되는 경우는 안 된다고 먼저 말씀드립니다.</div>
+          </form>
+        </div>
       </div>
-      <div class="vs-row hover-scale" style="background:white; border-radius:18px; padding:10px;">
-        <div class="vs-card-kpfc">네이버 등록 대표 심사관</div>
-        <div class="vs-label">심사 인력</div>
-        <div class="vs-card-low">단순 영업 사원</div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <strong>나라똔 인증 기업심사관</strong>
+          <span>공식 인증 기반 신뢰 확보</span>
+        </div>
+        <div class="trust-item">
+          <strong>1588-9097 대표번호 운영</strong>
+          <span>단순 개인 영업이 아닌 센터형 운영</span>
+        </div>
+        <div class="trust-item">
+          <strong>무료 1차 전화 진단</strong>
+          <span>진행 전 먼저 가능 여부 판단</span>
+        </div>
+        <div class="trust-item">
+          <strong>자금 미조달 시 100% 환불</strong>
+          <span>되는 업체만 집중 진행</span>
+        </div>
       </div>
-      <div class="vs-row hover-scale" style="background:white; border-radius:18px; padding:10px;">
-        <div class="vs-card-kpfc">실패 시 100% 환불</div>
-        <div class="vs-label">보장 규정</div>
-        <div class="vs-card-low">환불 불가 및 연락 두절</div>
+    </section>
+
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">왜 지금 문의해야 하나</span>
+          <h2>정책자금은 돈 없을 때 찾는 곳이 아니라<br />받을 수 있을 때 먼저 확보하는 영역입니다</h2>
+          <p>정말 급해지고 나서 찾으면 이미 늦는 경우가 많습니다. 정책자금은 오늘 넣고 내일 나오는 급전이 아닙니다.</p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="card">
+            <div class="card-icon">①</div>
+            <h3>“지금은 여유가 있는데요”</h3>
+            <p>그래서 놓치는 경우가 많습니다. 여유 있을 때 확보해두는 자금이 사업을 흔들리지 않게 만듭니다.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">②</div>
+            <h3>“급하면 그때 신청하면 되죠”</h3>
+            <p>정책자금은 심사 기간이 필요합니다. 보통 1개월에서 3개월 정도 준비와 검토가 들어갑니다.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">③</div>
+            <h3>“일단 넣으면 되는 거 아닌가요”</h3>
+            <p>아닙니다. 무조건 받을 수 있는 구조가 아니기 때문에, 시작 전에 기준부터 보는 게 훨씬 중요합니다.</p>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="highlight-banner">
+          <div>
+            <h2>무조건 된다고 하지 않습니다.<br />그래서 더 믿을 수 있습니다.</h2>
+            <p>
+              대표님 시간을 아끼기 위해 먼저 판단합니다. 가능성이 낮으면 진행을 권하지 않고,
+              가능성이 있는 업체만 2차 전략 심사로 넘깁니다.
+            </p>
+            <div class="highlight-list">
+              <div class="highlight-item">무료 1차 전화 진단으로 기본 조건 확인</div>
+              <div class="highlight-item">현장 방문 2차 전략 심사로 실제 리스크 점검</div>
+              <div class="highlight-item">안 되는 업체에 시간 낭비하지 않는 선별형 운영</div>
+            </div>
+          </div>
+          <div class="stats-box">
+            <h3>진행 원칙</h3>
+            <ul>
+              <li><strong>무조건 접수하지 않습니다</strong> 가능 여부부터 먼저 봅니다</li>
+              <li><strong>1차에서 절반 이상 선별</strong> 기준 없는 진행을 막습니다</li>
+              <li><strong>2차에서 서류와 현장 대조</strong> 기관 심사 때 걸릴 요소를 미리 확인합니다</li>
+              <li><strong>자금 미조달 시 100% 환불</strong> 그래서 되는 업체에 집중합니다</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">왜 KPFC인가</span>
+          <h2>상담만 하는 곳처럼 보이면 안 됩니다<br />기준을 가지고 선별하는 곳처럼 보여야 합니다</h2>
+          <p>문의가 남는 랜딩은 결국 신뢰 구조가 먼저 잡혀 있어야 합니다.</p>
+        </div>
+
+        <div class="reason-grid">
+          <article class="card">
+            <div class="card-icon">🏆</div>
+            <h3>공신력 있는 포지션</h3>
+            <p>KPFC 한국정책자금지원센터, 대표번호 운영, 나라똔 인증 기업심사관 포지션으로 신뢰를 먼저 만듭니다.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>대표님 시간을 지키는 방식</h3>
+            <p>무작정 진행하지 않고 먼저 걸러냅니다. 안 될 업체까지 다 받는 구조가 아닙니다.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">📍</div>
+            <h3>실전 중심 심사 구조</h3>
+            <p>전화 진단으로 끝내지 않고, 현장 확인과 전략 점검까지 이어지는 구조로 접근합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">진행 방식</span>
+          <h2>문의 후 바로 영업하지 않습니다<br />먼저 판단하고, 그다음에 진행합니다</h2>
+          <p>이 흐름이 보여야 고객이 “여기는 다르다”라고 느낍니다.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="card">
+            <div class="card-icon">1</div>
+            <h3>1차 유선 심사</h3>
+            <ul>
+              <li>업종, 매출, 운영기간 등 기본 조건 체크</li>
+              <li>10여 가지 핵심 항목 기준으로 무료 진단</li>
+              <li>가능성이 낮으면 여기서 진행 중단</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card-icon">2</div>
+            <h3>2차 전략 심사</h3>
+            <ul>
+              <li>심사관 현장 실사 및 서류 대조</li>
+              <li>기관 심사 때 문제 될 요소 사전 점검</li>
+              <li>되는 업체만 집중 관리 및 자금 설계</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">비용 안내</span>
+          <h2>비용도 숨기지 않습니다<br />대신 기준 없이 받지도 않습니다</h2>
+          <p>무조건 싸다고 좋은 구조가 아닙니다. 제대로 보고 움직이는 구조여야 합니다.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="card price-card">
+            <div class="price-tag">소상공인 맞춤형 자금 조달</div>
+            <h3>연 매출 5억 미만</h3>
+            <div class="price-main">
+              <strong>110만원</strong>
+              <span>한 달 약 9만원대 개념</span>
+            </div>
+            <p>무료 1차 진단 후 진행 여부를 먼저 판단합니다. 단순 접수가 아니라, 실제 진행 가능한 업체만 관리합니다.</p>
+          </article>
+
+          <article class="card price-card">
+            <div class="price-tag">기업 분석 및 대형 자금 설계</div>
+            <h3>연 매출 5억 이상</h3>
+            <div class="price-main">
+              <strong>220만원</strong>
+              <span>전담 배치 및 기업 분석 포함</span>
+            </div>
+            <p>보다 큰 자금 구조나 기업형 전략이 필요한 업체를 대상으로 진행합니다. 규모가 커질수록 준비 방향도 더 정교해야 합니다.</p>
+          </article>
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="card">
+          <div class="price-tag">MOU 특별가</div>
+          <h3>성공보수 안내</h3>
+          <p><span class="strike">원래 7%</span> → <strong>3% 특별 적용</strong></p>
+          <p style="margin-top: 10px;">국내 최저 수수료 기준과 자금 미조달 시 100% 환불 구조를 함께 안내하는 섹션입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">저가형 주의</span>
+          <h2>계약금이 너무 없거나, 너무 가볍게 말하는 곳은<br />오히려 대표님 시간만 버릴 수 있습니다</h2>
+          <p>랜딩에서 이 구간은 매우 중요합니다. 싼 곳과 비교되는 게 아니라, 기준 있는 곳으로 보이게 해야 합니다.</p>
+        </div>
+
+        <div class="reason-grid">
+          <article class="card">
+            <div class="card-icon">KP</div>
+            <h3>KPFC 센터</h3>
+            <ul>
+              <li>네이버 등록 대표 심사관 포지션</li>
+              <li>무료 1차 진단 후 선별 진행</li>
+              <li>자금 미조달 시 100% 환불</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card-icon">VS</div>
+            <h3>저가형 업체</h3>
+            <ul>
+              <li>단순 영업 사원 중심 상담</li>
+              <li>기준 없이 일단 접수부터 유도</li>
+              <li>환불 불가 또는 추후 연락 어려움</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card-icon">📌</div>
+            <h3>대표님이 보셔야 할 기준</h3>
+            <ul>
+              <li>누가 판단하는지</li>
+              <li>진행 전 선별이 있는지</li>
+              <li>결과 책임 구조가 있는지</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">후기 영역 예시</span>
+          <h2>성공 사례가 많은 곳이라는 인상을 주려면<br />후기 카드도 깔끔하고 단정하게 보여야 합니다</h2>
+          <p>실제 후기 이미지나 캡처를 넣을 자리가 아직 없으면, 우선 카드 레이아웃부터 잡아두면 됩니다.</p>
+        </div>
+
+        <div class="review-grid">
+          <article class="card review-card">
+            <div class="review-head">
+              <div class="review-avatar">김</div>
+              <div>
+                <strong>제조업 대표 김OO</strong>
+                <span>운영 6년차 · 시설자금 상담</span>
+              </div>
+            </div>
+            <p>“여기는 일단 넣고 보자는 곳이 아니라, 먼저 가능 여부부터 딱 잘라줘서 오히려 더 믿음이 갔습니다.”</p>
+          </article>
+          <article class="card review-card">
+            <div class="review-head">
+              <div class="review-avatar">박</div>
+              <div>
+                <strong>유통업 대표 박OO</strong>
+                <span>운영 4년차 · 운전자금 상담</span>
+              </div>
+            </div>
+            <p>“제가 몰랐던 부분을 먼저 짚어줬고, 괜히 시간 낭비 안 하게 방향부터 잡아준 점이 좋았습니다.”</p>
+          </article>
+          <article class="card review-card">
+            <div class="review-head">
+              <div class="review-avatar">이</div>
+              <div>
+                <strong>서비스업 대표 이OO</strong>
+                <span>운영 3년차 · 정책자금 준비</span>
+              </div>
+            </div>
+            <p>“무조건 된다고 안 하니까 오히려 안심됐고, 1차 진단만으로도 어디를 먼저 봐야 할지 감이 왔습니다.”</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">자주 묻는 질문</span>
+          <h2>고객이 머릿속에서 바로 꺼낼 질문들을<br />미리 정리해두면 문의 전환이 더 빨라집니다</h2>
+        </div>
+
+        <div class="faq-grid">
+          <article class="card faq-item">
+            <h3>무조건 받을 수 있나요?</h3>
+            <p>아닙니다. 그래서 무료 1차 진단을 먼저 해드립니다. 무조건 진행하지 않고, 가능한지부터 판단합니다.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>지금 당장 급한데 바로 나오나요?</h3>
+            <p>정책자금은 오늘 신청해서 내일 나오는 구조가 아닙니다. 보통 1개월에서 3개월 정도 심사 기간이 필요합니다.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>왜 2번이나 심사를 하나요?</h3>
+            <p>대표님 시간을 지키기 위해서입니다. 기준 없이 넣었다가 기회를 날리지 않도록, 시작 전에 먼저 걸러냅니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <span class="kicker" style="color:#bcd2ff;">Contact</span>
+          <h2 style="margin:8px 0 14px; font-size:clamp(28px,4vw,42px); line-height:1.2; letter-spacing:-0.05em;">대표님 상황,<br />지금 기준으로 가능한지 먼저 보겠습니다</h2>
+          <p>문의만 남겨주시면 무료 1차 진단 방향으로 안내드립니다. 안 되는 경우는 안 된다고 먼저 말씀드립니다.</p>
+          <ul class="contact-list">
+            <li>
+              <strong>대표번호</strong>
+              1588-9097
+            </li>
+            <li>
+              <strong>센터명</strong>
+              KPFC 한국정책자금지원센터
+            </li>
+            <li>
+              <strong>포지션</strong>
+              나라똔 인증 기업심사관
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-form-card">
+          <h3 style="margin:0 0 10px; font-size:30px; line-height:1.2; letter-spacing:-0.04em; color:var(--navy-deep);">무료 1차 진단 접수</h3>
+          <p style="margin:0 0 20px; color:var(--sub);">스크롤 끝까지 보신 분들은 대부분 문의 남깁니다. 지금 놓치면 다시 돌아보게 됩니다.</p>
+
+          <form class="lead-form" action="YOUR_FORM_ENDPOINT" method="POST">
+            <div class="field">
+              <label for="name2">성함 / 업체명</label>
+              <input id="name2" name="name" type="text" placeholder="예: 홍길동 / OO테크" required />
+            </div>
+            <div class="field">
+              <label for="phone2">연락처</label>
+              <input id="phone2" name="phone" type="tel" placeholder="예: 010-1234-5678" required />
+            </div>
+            <div class="field">
+              <label for="message2">상담 내용</label>
+              <textarea id="message2" name="message" placeholder="예: 제조업 / 운영기간 / 희망자금 / 현재 상황"></textarea>
+            </div>
+            <label class="consent">
+              <input type="checkbox" required />
+              <span>개인정보 수집 및 상담 연락에 동의합니다.</span>
+            </label>
+            <button class="btn btn-primary btn-block" type="submit">문의 남기고 무료 진단 받기</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
-    <img src="https://www.kpfc.kr/images/kpfc-logo.png" alt="KPFC" class="footer-logo">
-    <p style="color: white; font-size: 18px; margin-bottom: 10px;"><b>이 종 현 대표</b> | 한국정책자금지원센터(KPFC)</p>
-    <p>문의: 1588-9097 | Copyright 2026 KPFC. All rights reserved.</p>
+    <div class="container footer-inner">
+      <div>© KPFC 한국정책자금지원센터. All rights reserved.</div>
+      <div>대표번호 1588-9097 · 정책자금 무료 1차 진단</div>
+    </div>
   </footer>
 
+  <div class="floating-cta">
+    <a class="btn btn-primary" href="#leadForm">무료 1차 진단 받기</a>
+  </div>
+
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in, .slide-in-left').forEach(el => observer.observe(el));
+    // 제출 전 테스트용 안내
+    document.querySelectorAll('form').forEach(function(form) {
+      form.addEventListener('submit', function(e) {
+        if (form.action.includes('YOUR_FORM_ENDPOINT')) {
+          e.preventDefault();
+          alert('폼 연동 전입니다. 코드 안의 YOUR_FORM_ENDPOINT 부분을 실제 폼 주소로 바꿔주세요.');
+        }
+      });
+    });
   </script>
 </body>
 </html>
