@@ -88,3 +88,38 @@ input, textarea {
   padding: 10px;
   background: white;
 }
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(11,37,83,0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(11,37,83,0); }
+  100% { box-shadow: 0 0 0 0 rgba(11,37,83,0); }
+}
+.float {
+  transition: transform 0.2s ease;
+}
+
+.float:hover {
+  transform: translateY(-5px);
+}
+.highlight {
+  animation: highlight 2s ease-in-out infinite;
+}
+
+@keyframes highlight {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
